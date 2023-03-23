@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Color Dispatch</title>
+        <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<link rel="preconnect" href="https://unpkg.com/@splinetool/runtime@0.9.265/build/runtime.js">
+		<style></style>
+<script>
+let usersIsOnMobile;
+/* IF USER IS ON MOBILE; LOAD THE CORRECT CSS */
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    console.log("User is on Mobile!");
+    usersIsOnMobile = true;
+    // Load mobile stylesheet
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'mobile.css';
+    document.head.appendChild(link);
+    legal.innerHTML = `© 2023 / WE USE COOKIES. SEE OUR <a href="https://docs.google.com/document/d/1MzLdRf67zeKG5tKM2eDm96at8mATrFmgw-Nd8BlEk1E/edit?usp=sharing/" target="_blank"><u>PRIVACY POLICY</u></a>`
+}
+else {
+    usersIsOnMobile = false;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'desktop.css';
+    document.head.appendChild(link);
+}
+</script>
+<script>
+setTimeout(loadScripts,700);function loadScripts(){setTimeout(function(){document.querySelectorAll("script[data-type='defer']").forEach(function(e){e.setAttribute("src",e.getAttribute("datasrc"))})},1500),setTimeout(function(){document.querySelectorAll("script[data-type='defer1']").forEach(function(e){e.setAttribute("src",e.getAttribute("datasrc"))})},6100);var e=document.getElementsByTagName("body")[0],t=document.querySelectorAll('script[type="delayscript1"]'),r=document.querySelectorAll('script[type="delayscript2"]'),n=document.querySelectorAll('script[type="delayscript3"]'),i=document.querySelectorAll('script[type="delayscript4"]'),p=document.querySelectorAll('script[type="delayscript5"]');_contents1=[],_contents2=[],_contents3=[],_contents4=[],_contents5=[];for(var c=0,l=t.length;c<l;c++)_contents1.push(t[c].innerHTML);for(var c=0,l=r.length;c<l;c++)_contents2.push(r[c].innerHTML);for(var c=0,l=n.length;c<l;c++)_contents3.push(n[c].innerHTML);for(var c=0,l=i.length;c<l;c++)_contents4.push(i[c].innerHTML);for(var c=0,l=p.length;c<l;c++)_contents5.push(p[c].innerHTML);setTimeout(function(){(_script1=document.createElement("script")).type="importmap",_script1.innerHTML=_contents1.join(" "),e.appendChild(_script1)},6e3),setTimeout(function(){(_script2=document.createElement("script")).type="module",_script2.innerHTML=_contents2.join(" "),e.appendChild(_script2)},7e3),setTimeout(function(){(_script3=document.createElement("script")).type="module",_script3.innerHTML=_contents3.join(" "),e.appendChild(_script3)},8e3),setTimeout(function(){(_script4=document.createElement("script")).type="module",_script4.innerHTML=_contents4.join(" "),e.appendChild(_script4)},9e3),setTimeout(function(){(_script5=document.createElement("script")).type="text/javascript",_script5.innerHTML=_contents5.join(" "),e.appendChild(_script5)},1e4)}
+</script>
+    </head>
+    <body>
+        
+        <div class="wrapper"><div class="marquee" id="header"></div></div>
+        <div class="wrapper"><div class="marquee" id="footer"></div></div>
+        <div id="introText"></div>
+        <div id="legal" class="marquee">
+            COPYRIGHT THE COLOR DISPATCH 2023 / WE USE COOKIES. READ MORE IN OUR <a href='https://docs.google.com/document/d/1MzLdRf67zeKG5tKM2eDm96at8mATrFmgw-Nd8BlEk1E/edit?usp=sharing/'target='_blank'><u>PRIVACY POLICY</u></a>
+        </div>
+        <div id="btnContainer">
+            <form><input type="text" name="search" placeholder="your e-mail" id="textInput"></form>
+            <div id="cta">sign me up!</div>
+        </div>
+        <form id="subscribe-form" action="https://thecolordispatch.us21.list-manage.com/subscribe/post-json?u=b9d91f7989e0522366d73453b&amp;id=94a5802ec5&amp;f_id=005095e1f0" method="get">
+            <div>
+                <input type="email" placeholder="email *" value="" name="EMAIL" id="mcForm">
+            </div>
+        </form>
+        <div class="scroll-container" id="mainContainer">
+            <section class="section" id="slide1"></section>
+            <section class="section" id="slide2">
+                <canvas id="artwork1"></canvas>
+            </section>
+            <section class="section" id="slide3"></section>
+            <section class="section" id="slide4">
+                <canvas id="artwork2"></canvas>
+            </section>
+            <section class="section" id="slide5"></section>
+            <section class="section" id="slide6">
+                <canvas id="artwork3"></canvas>
+            </section>
+            <section class="section" id="slide7"></section>
+        </div>
+        
+        <script async datasrc="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js" data-type='defer1'></script>
+         <script type="delayscript1">
+            {
+                "imports": {
+                    "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@0.9.265/build/runtime.js"
+                }
+            }
+        </script>
+        <script type="delayscript2" id="firstArtwork">
+            import { Application } from '@splinetool/runtime';
+            const canvas = document.getElementById('artwork1');
+            const app = new Application(canvas);
+            app.load('https://prod.spline.design/f15yKyjHQ6VNcMIb/scene.splinecode');
+        </script>
+        <script type="delayscript3" id="secondArtwork">
+            import { Application } from '@splinetool/runtime';
+            const canvas = document.getElementById('artwork2');
+            const app = new Application(canvas);
+            app.load('https://prod.spline.design/crkSfChGPWF0qFZR/scene.splinecode');
+        </script>
+        <script type="delayscript4" id="thirdArtwork">
+            import { Application } from '@splinetool/runtime';
+            const canvas = document.getElementById('artwork3');
+            const app = new Application(canvas);
+            app.load('https://prod.spline.design/MXugFShb8Bsij0QL/scene.splinecode');
+        </script>
+        <script datasrc="scripts.js" data-type='defer'></script>
+        <!-- Meta Pixel Code -->
+        <script type="delayscript5">
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '151718217805869');
+            fbq('track', 'PageView');
+            document.getElementById('cta').addEventListener('click', function() {
+                fbq('trackCustom', 'CallToActionClick', {
+                    buttonId: 'cta',
+                });
+            });
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none"
+                 src="https://www.facebook.com/tr?id=151718217805869&ev=PageView&noscript=1"
+            />
+        </noscript>
+		<script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+    </body>
+</html>

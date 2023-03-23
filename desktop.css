@@ -1,0 +1,289 @@
+/* BASICS */
+/* 
+@font-face {
+  font-family: Suisse;
+  src: url('assets/fonts/SuisseIntlMono-Regular.otf') format('opentype');
+}
+*/
+@font-face {
+  font-family: 'Suisse';
+  src: url('assets/fonts/suisseintlmono-regular.woff2') format('woff2');
+  font-display: swap;
+  unicode-range: U+0020-007E; /* Subset the font to only include ASCII characters */
+}
+* {
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+    overflow: hidden;
+    font-size: 1vh;
+    font-family: 'Suisse', Helvetica, serif;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+body {
+    text-transform: uppercase;
+    pointer-events: none;
+}
+a {
+    text-decoration:none;
+    color: inherit;
+}
+
+/* CONTENT */
+#introText {
+    position: fixed;
+    height: 100vh;
+    width: 100vw; 
+    top: 0;
+    left: 0;
+    z-index: -3;
+    pointer-events: none;
+    overflow: hidden;
+}
+.intro-text {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    z-index: -2;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#legal {
+    z-index: 4;
+    position: fixed;
+    height: auto;
+    left: 1vh;
+    bottom: -5vh;
+    transition: bottom 1s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+}
+
+/* SECTIONS */
+.section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    pointer-events: none;
+    z-index: -1;
+    background-color: black;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#slide1 {
+    pointer-events: all;
+    background-image: url('assets/text_svgs/slide1.svg');
+    z-index: 0;
+}
+#slide2 {
+    background-color: #eb006d;
+    z-index: 2;
+}
+#slide3 {
+    background-image: url('assets/text_svgs/slide2.svg');
+}
+#slide4 {
+    background-color: #00eaff;
+    z-index: 2;
+}
+#slide5 {
+    background-image: url('assets/text_svgs/slide3.svg');
+}
+#slide6 {
+    background-color: #ffee00;
+    z-index: 2;
+}
+#slide7 {
+    background-image: url('assets/text_svgs/slide4.svg');
+}
+.scroll-container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    margin-top: 100vh;
+    transition: margin-top 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+    overflow: hidden;
+    z-index: -2;
+}
+canvas {
+    display: block;
+    width: 80vw;
+    height: 80vh;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+/* MARQUEES, HEADER & FOOTER */
+.wrapper {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    pointer-events: none;
+    padding: 0;
+    margin: 0;
+}
+.marquee a {
+    margin: 0;
+    padding: 0;
+    pointer-events: all;
+}
+#header {
+    z-index: 5;
+    position: fixed;
+    top: 1vh;
+    animation: header 60s steps(3600) infinite;
+    transition: opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+    padding: 0;
+    margin: 0;
+}
+#footer {
+    z-index: 5;
+    position: fixed;
+    bottom: 0vh;
+    animation: footer 60s steps(3600) infinite;
+    transition: opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+    padding: 0;
+    margin: 0;
+    vertical-align: bottom;
+    bottom: 1vh;
+}
+@keyframes header {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes footer {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* CTA & INPUT BUTTONS */
+#btnContainer {
+    display: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: fixed;
+    width: auto;
+    height: 5vh;
+    bottom: 10vh;
+    right: 5vh;
+    grid-gap: 2vh;
+    transition: opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+    z-index: 1;
+    user-select: none;
+    opacity: 0;
+}
+#cta {
+    width: 12vh;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    border-radius: 2.5vh;
+    padding: 0 2vh;
+    cursor: pointer;
+    transition: padding 1s cubic-bezier(0.25, 0.1, 0.25, 1.0), width 1s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+    background: rgba(255, 255, 0, 1);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#cta:hover {
+    width: 14vh;
+}
+.hover-width-inherit:hover {
+  width: inherit;
+}
+input[type=text] {
+    width: 20vh;
+    text-align: center;
+    box-sizing: border-box;
+    border: 0;
+    box-shadow: inset 0 0 0 0.15vh #eb006d;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    font: inherit;
+    text-transform: inherit;
+    color: #eb006d;
+    height: 100%;
+    border-radius: 2.5vh;
+    transition: width 1s cubic-bezier(0.25, 0.1, 0.25, 1.0), background 1s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+    caret-color: inherit;
+    background: rgba(255, 255, 255, 0);
+}
+input[type=text]:hover {
+    width: 22vh;
+}
+input[type=text]:focus {
+    width: 30vh;
+    box-sizing: border-box;
+    border: 0;
+    /* box-shadow: inset 0 0 0 0.15vh white; */
+    background: rgba(255, 255, 255, 0);
+    outline: none;
+    border-color: transparent;
+    color: inherit;
+    transition: width 1s cubic-bezier(0.25, 0.1, 0.25, 1.0), background 1s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+}
+input[type=text]::placeholder {
+    color: inherit;
+}
+input[type=text]:focus::placeholder {
+  opacity: 0;
+}
+form {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    color: white;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30vh black inset !important;
+}
+/*Change text in autofill textbox*/
+input:-webkit-autofill{
+    -webkit-text-fill-color: white !important;
+}
+
+/* CONFETTI */
+#confetti-canvas {
+    top: 0;
+    position: fixed;
+    z-index: 4;
+    pointer-events: none;
+    overflow: hidden;
+}
